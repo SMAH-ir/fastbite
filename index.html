@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Online Fast Food Menu</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- bebas-neue -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <!-- pacifico -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <!-- epilogue -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@1,200&display=swap" rel="stylesheet">
+    <!-- icon -->
+    <script src="https://kit.fontawesome.com/dc1a0a3920.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/86b6acadcf.js" crossorigin="anonymous"></script> -->
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        /* start header */
+        header {
+            background-image: url("../full/imgs/main.jpg");
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 800px;
+        }
+
+        .headertext {
+            display: flex;
+            flex-direction: column;
+            margin-left: 120px;
+        }
+
+        .headertext h1 {
+            font-family: 'Pacifico', cursive;
+            color: #ffb91a;
+            font-size: 40px;
+            font-weight: 100;
+            margin: 50px 0;
+        }
+
+        .headertext h2 {
+            font-family: 'Bebas Neue', cursive;
+            color: white;
+            font-size: 100px;
+            font-weight: 100;
+            line-height: 4.6rem;
+        }
+
+        .headertext button {
+            width: 15%;
+            background-color: #a5141a;
+            color: white;
+            border: 1px solid transparent;
+            border-radius: 3px;
+            letter-spacing: .5px;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 20px;
+            padding: 15px 0;
+            margin-top: 50px;
+        }
+
+        .headertext button:hover {
+            background-color: goldenrod;
+            transition-duration: .3s;
+        }
+
+        /* end header */
+
+        /* start main */
+        .menu-section {
+            width: 100%;
+            height: 250px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .items {
+            width: 15%;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+        }
+
+        .items h3 {
+            color: #383838;
+            font-size: 20px;
+            font-family: 'Bebas Neue', cursive;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .items img {
+            width: 25%;
+            height: 25%;
+        }
+
+        .items:hover {
+            border: 1px solid gold;
+            border-radius: 5px;
+        }
+
+        .order-section {
+            width: 100%;
+            height: 120vh;
+            background-image: url("../full/imgs/special-bg.jpg");
+            background-size: cover;
+            background-position: center;
+            font-family: 'Bebas Neue', cursive;
+            display: flex;
+            justify-content: center;
+        }
+
+        .order-card {
+            width: 80%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .left-card {
+            width: 50%;
+            height: 95vh;
+            display: flex;
+            flex-direction: column;
+            background-image: url("../full/imgs/special-01.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            border-radius: 15px 0 0 15px;
+            padding: 100px 60px;
+        }
+
+        .left-card h3 {
+            color: #fff;
+            font-size: 50px;
+            font-weight: lighter;
+            line-height: 50px;
+        }
+
+        .left-card p {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 100;
+            padding: 0;
+            margin: 0;
+        }
+
+        .left-card span {
+            color: #ffb91a;
+            font-weight: 100;
+            font-size: 35px;
+            margin: 20px 0;
+        }
+
+        .left-card button {
+            width: 30%;
+            background-color: #a5141a;
+            color: white;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            font-family: 'Bebas Neue', cursive;
+            font-weight: lighter;
+            font-size: 20px;
+            padding: 10px 30px;
+        }
+
+        .left-card button:hover {
+            background-color: goldenrod;
+            transition-duration: 0.3s;
+        }
+
+        .right-card {
+            width: 50%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .order-box {
+            width: 100%;
+            height: 360px;
+            background-image: url("../full/imgs/special-03.jpg");
+            background-position: center;
+            background-size: cover;
+            border-radius: 0 0 15px 0;
+            font-weight: bolder;
+            padding: 40px 0 0 60px;
+        }
+
+        .order-box h3 {
+            color: #fff;
+            font-size: 50px;
+            line-height: 50px;
+            font-weight: lighter;
+        }
+
+        .order-box p {
+            color: #fff;
+            font-size: 20px;
+            font-weight: lighter;
+            padding: 0;
+            margin: 0;
+        }
+
+        .order-box span {
+            color: #e0bb16;
+            font-weight: lighter;
+            font-size: 28px;
+        }
+
+        .order-minicard {
+            width: 100%;
+            background-image: url("../full/imgs/special-02.jpg");
+            background-position: center;
+            background-size: cover;
+            border-radius: 0 15px 0 0;
+        }
+
+        /* los-burger */
+        .los-america {
+            height: 800px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .los-text h3 {
+            color: #a5141a;
+            font-family: 'Pacifico', cursive;
+            font-size: 27px;
+            font-weight: 100;
+            margin: 180px 50px 0 0;
+        }
+
+        .los-text h2 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 50px;
+            font-weight: lighter;
+            line-height: 50px;
+        }
+
+        .los-text p {
+            color: #6b6b6b;
+            font-family: 'Epilogue', sans-serif;
+            font-size: 15px;
+            line-height: 25px;
+            font-weight: bold;
+        }
+
+        .los-text button {
+            background-color: #a5141a;
+            color: white;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            font-family: 'Bebas Neue', cursive;
+            font-weight: 400;
+            font-size: 19px;
+            padding: 15px 40px;
+            margin: 30px 0 0 0px;
+        }
+
+        .los-text button:hover {
+            background-color: goldenrod;
+            transition-duration: 0.2s;
+        }
+
+        .los-text h3,
+        h2,
+        p {
+            padding: 15px 0;
+        }
+
+        .los-burger img {
+            padding-top: 130px;
+            margin: 0 120px 12px 0;
+        }
+
+        .masterpiece {
+            background-image: url("../full/imgs/delivery.jpg");
+            width: 100%;
+            height: 100vh;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+        }
+
+        .fullmenu-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .fullmenu-box h3 {
+            font-family: 'Pacifico', cursive;
+            font-size: 25px;
+            letter-spacing: 1px;
+            color: #a5141a;
+            padding: 0px 0 0 0px;
+        }
+
+        .fullmenu-box h2 {
+            color: #fff;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 110px;
+            font-weight: lighter;
+            line-height: 110px;
+            text-align: center;
+        }
+
+        .fullmenu-box button {
+            background-color: #a5141a;
+            color: white;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            letter-spacing: 1px;
+            font-family: 'Bebas Neue', cursive;
+            font-weight: 400;
+            font-size: 19px;
+            padding: 15px 40px;
+            margin: 0 300px;
+        }
+
+        .fullmenu-box button:hover {
+            background-color: goldenrod;
+            transition-duration: 0.2s;
+        }
+
+        .daily-box {
+            width: 100%;
+            width: auto;
+            background-color: #ffb91a;
+            display: flex;
+            justify-content: space-around;
+            flex-direction: row;
+            text-align: center;
+        }
+
+        .daily-box h3 {
+            color: #fff;
+            font-family: 'Pacifico', cursive;
+            font-weight: lighter;
+            font-size: 50px;
+            padding-top: 10px;
+        }
+
+        .daily-box p {
+            color: #fff;
+            font-family: 'Epilogue', sans-serif;
+            font-size: 18px;
+            font-weight: 900;
+            padding: 0 0 0 0;
+            margin-bottom: 20px;
+        }
+
+        .main-dishes {
+            width: 100%;
+            height: 110vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main-menu {
+            color: white;
+            background-color: #a5141a;
+            width: 40%;
+            height: 98vh;
+            border: 1px solid white;
+            border-radius: 15px;
+            padding: 50px;
+            margin: 100px 0 0 90px;
+        }
+
+        .main-menu h2 {
+            font-family: 'Bebas Neue', cursive;
+            text-align: left;
+            line-height: 100px;
+            font-size: 50px;
+            font-weight: 500;
+        }
+
+        .main-menu h3 {
+            font-family: 'Bebas Neue', cursive;
+            text-align: left;
+            line-height: 40px;
+            font-size: 25px;
+            font-weight: 500;
+        }
+
+        .main-menu p {
+            font-family: 'Epilogue', sans-serif;
+            text-align: left;
+            font-size: 15px;
+            font-weight: 900;
+            padding-bottom: 20px;
+        }
+
+        .main-image {
+            width: 50%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main-image img {
+            width: 80%;
+            height: 60vh;
+        }
+
+        .recommended-section {
+            width: 100%;
+            background-color: #f8f8f8;
+        }
+
+        .recommended-text {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .recommended-text>h2 {
+            color: #a5141a;
+            font-family: 'Pacifico', cursive;
+            font-size: 27px;
+            font-weight: lighter;
+            text-align: center;
+            padding-top: 90px;
+        }
+
+        .recommended-text>h3 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 50px;
+            font-weight: 100;
+            text-align: center;
+            line-height: 60px;
+            color: black;
+            padding: 35px 60px 0 55px;
+        }
+
+        .recommended-text>p {
+            color: #6b6b6b;
+            font-family: 'Epilogue', sans-serif;
+            text-align: center;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 40px 0 30px 0;
+        }
+
+        .recommended-cards {
+            /* background-color: darkorchid; */
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .recommended-card {
+            width: 42%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid transparent;
+            border-radius: 15px;
+            box-shadow: 16px 16px 32px #c7c7c7,
+                -16px -16px 32px #f9f9f9;
+            padding: 40px 0;
+            margin: 25px 0 25px 0;
+        }
+
+        .recommended-card:hover {
+            border-color: #ffc107;
+            transition-duration: 0.2s;
+        }
+
+        .recommended-card-image {
+            width: 48%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .recommended-card-image img {
+            width: 80%;
+            height: auto;
+        }
+
+        .recommended-card-details {
+            width: 48%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+        }
+
+        .recommended-card-details h3 {
+            color: #383838;
+            font-size: 23px;
+            font-family: 'Bebas Neue', cursive;
+            line-height: 23px;
+            font-weight: 300;
+            padding: 0 0 0 30px;
+        }
+
+        .recommended-card-details h5 {
+            color: #a5141a;
+            font-size: 23px;
+            font-family: 'Bebas Neue', cursive;
+            font-weight: lighter;
+            padding: 20px 0 20px 30px;
+        }
+
+        .recommended-card-details p {
+            color: #6b6b6b;
+            font-size: 15px;
+            font-family: 'Epilogue', sans-serif;
+            line-height: 20px;
+            font-weight: 600;
+            padding: 0 0 0 30px;
+        }
+
+        .recommended-card-details a {
+            color: #383838;
+            font-family: 'Bebas Neue', cursive;
+            text-decoration: none;
+            padding: 3px 0 0 30px;
+        }
+
+        .popular-foods {
+            background-image: url("../full/imgs/fav-bg.jpg");
+            width: 100%;
+            height: 700px;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            margin-top: 100px;
+        }
+
+        .preferred-foods {
+            /* background-color: #ffc107; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .preferred-foods h3 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 110px;
+            font-weight: 100;
+            text-align: center;
+            letter-spacing: 2px;
+            line-height: 110px;
+            color: #fff;
+            margin: 60px 100px 0 100px;
+        }
+
+        .preferred-foods h2 {
+            color: #a5141a;
+            font-family: 'Pacifico', cursive;
+            font-size: 28px;
+            font-weight: lighter;
+            text-align: center;
+            margin-top: 160px;
+        }
+
+        .preferred-foods button {
+            background-color: #a5141a;
+            color: white;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            letter-spacing: 1px;
+            font-family: 'Bebas Neue', cursive;
+            font-weight: lighter;
+            font-size: 20px;
+            padding: 15px 39px;
+            margin: 60px 210px 150px 200px;
+        }
+
+        .preferred-foods button:hover {
+            background-color: goldenrod;
+            transition-duration: 0.2s;
+        }
+
+        .feedback {
+            background-attachment: fixed;
+            background-image: url("../full/imgs/special-bg.jpg");
+            width: 100%;
+            height: 160vh;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .feedback-text {
+            width: 40%;
+            height: 70vh;
+            margin: 0 auto;
+        }
+
+        .feedback-text h2 {
+            color: #a5141a;
+            font-family: 'Pacifico', cursive;
+            font-size: 27px;
+            font-weight: lighter;
+            padding: 140px 0 0 200px;
+        }
+
+        .feedback-text h3 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 50px;
+            font-weight: 100;
+            letter-spacing: 1px;
+            line-height: 60px;
+            color: black;
+            padding: 43px 0 0 90px;
+        }
+
+        .feedback-text p {
+            color: #6b6b6b;
+            font-family: 'Epilogue', sans-serif;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 45px 0 70px 70px;
+        }
+
+        .feedback-clients {
+            width: 90%;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: 0 auto 80px auto;
+        }
+
+        .client-one {
+            background-color: white;
+            width: 46%;
+            height: 220px;
+            border-radius: 15px;
+        }
+
+        .client-text p {
+            color: #6b6b6b;
+            height: 90px;
+            text-align: center;
+            line-height: 25px;
+            font-family: 'Epilogue', sans-serif;
+            font-size: 17px;
+            font-weight: bold;
+            padding-top: 20px;
+        }
+
+        .client-info {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+        }
+
+        .client-info span {
+            color: #a5141a;
+            font-size: 20px;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin: 0 0 0 20px;
+        }
+
+        .client-image {
+            width: 2.25cm;
+            border-radius: 100px;
+            margin: 0 0 0 180px;
+        }
+
+        .free-delivery {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .delivery-text {
+            color: white;
+            width: 50%;
+            height: 80vh;
+            padding: 5px;
+            margin: 20px 0 0 50px;
+        }
+
+        .delivery-text h2 {
+            color: #a5141a;
+            font-family: 'Pacifico', cursive;
+            line-height: 100px;
+            font-size: 27px;
+            font-weight: 500;
+            margin: 70px 0 0 70px;
+        }
+
+        .delivery-text h3 {
+            color: black;
+            font-family: 'Bebas Neue', cursive;
+            text-align: left;
+            font-size: 60px;
+            font-weight: 500;
+            line-height: 60px;
+            margin: 20px 0 0 70px;
+        }
+
+        .delivery-text p {
+            color: #6b6b6b;
+            font-family: 'Epilogue', sans-serif;
+            text-align: left;
+            font-size: 16px;
+            line-height: 25px;
+            font-weight: bold;
+            margin: 20px 0 0 70px;
+        }
+
+        .delivery-image {
+            width: 50%;
+            height: 100vh;
+        }
+
+        .delivery-image img {
+            width: 63%;
+            height: 50vh;
+            margin: 140px 0 0 40px;
+        }
+
+        .application {
+            background-color: #a5141a;
+            width: 100%;
+            height: 120px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .application h3 {
+            color: white;
+            font-family: 'Bebas Neue', cursive;
+            text-align: left;
+            font-size: 25px;
+            font-weight: 100;
+            margin: 0;
+        }
+
+        .application button {
+            width: 10%;
+            background-color: #ffb91a;
+            color: white;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            font-family: 'Bebas Neue', cursive;
+            font-weight: 400;
+            font-size: 20px;
+            padding: 15px 0;
+        }
+
+        .application button:hover {
+            color: black;
+            background-color: white;
+            transition-duration: 0.2s;
+        }
+
+        footer {
+            width: 100%;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-box {
+            width: 80%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .footer-contact {
+            width: 20%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .footer-contact h5 {
+            color: black;
+            font-family: 'Bebas Neue', cursive;
+            text-align: left;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .footer-contact p {
+            color: #6b6b6b;
+            font-family: 'Epilogue', sans-serif;
+            text-align: left;
+            font-size: 15px;
+            line-height: 25px;
+            font-weight: bold;
+        }
+
+        .footer-contact address {
+            color: black;
+            font-family: 'Bebas Neue', cursive;
+            text-align: left;
+            font-size: 15px;
+            font-weight: lighter;
+        }
+
+        .footer-daily h5 {
+            color: black;
+            font-family: 'Bebas Neue', cursive;
+            text-align: left;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .day-list {
+            color: #6b6b6b;
+            font-family: 'Epilogue', sans-serif;
+            text-align: left;
+            font-size: 15px;
+            line-height: 25px;
+            font-weight: bold;
+            padding: 0;
+        }
+
+        .day-list li {
+            list-style-type: none;
+            padding-top: 3px;
+        }
+
+        .footer-help h5 {
+            color: black;
+            font-family: 'Bebas Neue', cursive;
+            text-align: left;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .help-list {
+            color: #6b6b6b;
+            font-family: 'Epilogue', sans-serif;
+            font-size: 15px;
+            line-height: 25px;
+            font-weight: bolder;
+            padding: 0;
+        }
+
+        .help-list li {
+            list-style-type: none;
+            padding: 3px 0;
+        }
+
+        .help-list li a {
+            color: #6b6b6b;
+            text-decoration: none;
+        }
+
+        .help-list li a:hover {
+            text-decoration: underline;
+            color: #a5141a;
+        }
+
+        .footer-icon h5 {
+            color: black;
+            font-family: 'Bebas Neue', cursive;
+            text-align: left;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .footer-icon a {
+            color: #a5141a;
+            font-size: 30px;
+            text-decoration: none;
+            padding: 0 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="headertext">
+            <h1>are you hungry?</h1>
+            <h2>game night?</h2>
+            <h2>working late?</h2>
+            <h2>order now!</h2>
+            <button type="button" href="#" class="button">go to menu</button>
+        </div>
+    </header>
+    <main>
+        <div class="menu-section">
+            <div class="items">
+                <img src="imgs/category-01.png" alt="burger">
+                <h3>BURGER</h3>
+            </div>
+            <div class="items">
+                <img src="imgs/category-02.png" alt="sandwiches">
+                <h3>SUB SANDWICHES</h3>
+            </div>
+            <div class="items">
+                <img src="imgs/category-03.png" alt="beef-roll">
+                <h3>BEEF ROLL</h3>
+            </div>
+            <div class="items">
+                <img src="imgs/category-04.png" alt="wedges">
+                <h3>WEDGES</h3>
+            </div>
+        </div>
+        <div class="order-section">
+            <div class="order-card">
+                <div class="left-card">
+                    <h3>MEET, EAT &</h3>
+                    <h3>ENJOY THE</h3>
+                    <h3>TRUE TASTE</h3>
+                    <p>LOREM IPSUM DOLOR SIT AMET, CONSECTETUR</p>
+                    <p>ADIPISCING ELIT, SED DO EIUSMOD TEMPOR.</p>
+                    <span>$9.45</span>
+                    <button type="button" href="#" class="button">ORDER NOW</button>
+                </div>
+                <div class="right-card">
+                    <div class="order-box order-minicard">
+                        <h3>DISCOVERY</h3>
+                        <h3>NEW MENU</h3>
+                        <p>LOREM IPSUM DOLOR</p>
+                        <p>ADIPISCING ELIT</p>
+                        <span>$44.99</span>
+                    </div>
+                    <div class="order-box">
+                        <h3>BUY ONE</h3>
+                        <h3>GET ONE</h3>
+                        <p>LOREM IPSUM DOLOR</p>
+                        <p>ADIPISCING ELIT</p>
+                        <span>$14.99</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="los-america">
+            <div class="los-burger">
+                <img src="imgs/about-bg.png" alt="about">
+            </div>
+            <div class="los-text">
+                <h3>Concerning Our Food</h3>
+                <h2>
+                    With American Love,
+                    <br>
+                    from Los Angeles
+                </h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur
+                    <br>
+                    adipiscing elit. Ut elit tellus, luctus nec
+                    <br>
+                    ullamcorper mattis, pulvinar dapibus.
+                </p>
+                <button type="button" href="#" class="button">ORDER NOW</button>
+            </div>
+        </div>
+        <div class="masterpiece">
+            <div class="fullmenu-box">
+                <h3>We Deliver Your Masterpiece!</h3>
+                <h2>
+                    Quick & Nutritious
+                    <br>
+                    Dinner
+                </h2>
+                <button type="button" href="#" class="button">FULL MENU</button>
+            </div>
+        </div>
+        <div class="daily-box">
+            <div class="box1">
+                <h3>230</h3>
+                <p>Ingredients</p>
+            </div>
+            <div class="box2">
+                <h3>500+</h3>
+                <p>Clients Daily</p>
+            </div>
+            <div class="box3">
+                <h3>12+</h3>
+                <p>Years of Experience</p>
+            </div>
+            <div class="box4">
+                <h3>100%</h3>
+                <p>Fresh & Tasty</p>
+            </div>
+        </div>
+        <div class="main-dishes">
+            <div class="main-menu">
+                <h2>Our Main Dishes</h2>
+                <h3>Breakfast Mood ….. $29.00</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h3>DRINKING PROSPECT ….. $9.45</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h3>Burger Time ….. $12.45</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h3>Grilled Chicken ….. $19.45</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="main-image">
+                <img src="imgs/dish-bg.png" alt="dish">
+            </div>
+        </div>
+        <section class="recommended-section">
+            <div class="recommended-text">
+                <h2>Tasty & crunchy</h2>
+                <h3>Recommended today</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="recommended-cards">
+                <div class="recommended-card">
+                    <div class="recommended-card-image">
+                        <img src="imgs/today-01.png" alt="recommended1">
+                    </div>
+                    <div class="recommended-card-details">
+                        <h3>Spaghetti <br> Bolognese</h3>
+                        <h5>$35.99</h5>
+                        <p>
+                            Lorem ipsum dolor sit
+                            <br>
+                            amet, consectetur
+                            <br>
+                            adipiscing elit.
+                        </p>
+                        <a href="https://themeoy.com/">ORDER NOW</a>
+                    </div>
+                </div>
+                <div class="recommended-card">
+                    <div class="recommended-card-image">
+                        <img src="imgs/today-02.png" alt="recommended2">
+                    </div>
+                    <div class="recommended-card-details">
+                        <h3>Stuffed Pizza</h3>
+                        <h5>$75.00</h5>
+                        <p>
+                            Lorem ipsum dolor sit
+                            <br>
+                            amet, consectetur
+                            <br>
+                            adipiscing elit.
+                        </p>
+                        <a href="https://themeoy.com/">ORDER NOW</a>
+                    </div>
+                </div>
+                <div class="recommended-card">
+                    <div class="recommended-card-image">
+                        <img src="imgs/today-03.png" alt="recommended2">
+                    </div>
+                    <div class="recommended-card-details">
+                        <h3>Vanilla Milkshake</h3>
+                        <h5>$10.99</h5>
+                        <p>
+                            Lorem ipsum dolor sit
+                            <br>
+                            amet, consectetur
+                            <br>
+                            adipiscing elit.
+                        </p>
+                        <a href="https://themeoy.com/">ORDER NOW</a>
+                    </div>
+                </div>
+                <div class="recommended-card">
+                    <div class="recommended-card-image">
+                        <img src="imgs/today-04.png" alt="recommended2">
+                    </div>
+                    <div class="recommended-card-details">
+                        <h3>Italiano Pizza</h3>
+                        <h5>$45.45</h5>
+                        <p>
+                            Lorem ipsum dolor sit
+                            <br>
+                            amet, consectetur
+                            <br>
+                            adipiscing elit.
+                        </p>
+                        <a href="https://themeoy.com/">ORDER NOW</a>
+                    </div>
+                </div>
+                <div class="recommended-card">
+                    <div class="recommended-card-image">
+                        <img src="imgs/today-05.png" alt="recommended2">
+                    </div>
+                    <div class="recommended-card-details">
+                        <h3>Build Your Own <br> Burger</h3>
+                        <h5>$9.99</h5>
+                        <p>
+                            Lorem ipsum dolor sit
+                            <br>
+                            amet, consectetur
+                            <br>
+                            adipiscing elit.
+                        </p>
+                        <a href="https://themeoy.com/">ORDER NOW</a>
+                    </div>
+                </div>
+                <div class="recommended-card">
+                    <div class="recommended-card-image">
+                        <img src="imgs/today-06.png" alt="recommended2">
+                    </div>
+                    <div class="recommended-card-details">
+                        <h3>Lemonade Ice Blue</h3>
+                        <h5>$3.00</h5>
+                        <p>
+                            Lorem ipsum dolor sit
+                            <br>
+                            amet, consectetur
+                            <br>
+                            adipiscing elit.
+                        </p>
+                        <a href="https://themeoy.com/">ORDER NOW</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="popular-foods">
+                <div class="preferred-foods">
+                    <h2>Popular Dishes</h2>
+                    <h3>
+                        Place an order for your
+                        <br>
+                        preferred food.
+                    </h3>
+                    <button type="button" href="#" class="button">ORDER NOW</button>
+                </div>
+            </div>
+            <div class="feedback">
+                <div class="feedback-text">
+                    <h2>Testimonials</h2>
+                    <h3>Customers Feedback</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="feedback-clients">
+                    <div class="client-one">
+                        <div class="client-text">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                                <br>
+                                elit. Ut elit tellus, luctus nec ullamcorper mattis,
+                                <br>
+                                pulvinar dapibus leo.
+                            </p>
+                            <div class="client-info">
+                                <img src="imgs/client-01.jpg" class="client-image" alt="client-01">
+                                <span>KELLY BROOK</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="client-one">
+                        <div class="client-text">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                                <br>
+                                elit. Ut elit tellus, luctus nec ullamcorper mattis,
+                                <br>
+                                pulvinar dapibus leo.
+                            </p>
+                            <div class="client-info">
+                                <img src="imgs/client-02.jpg" class="client-image" alt="client-02">
+                                <span>THOMAS MULLER</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="client-one">
+                        <div class="client-text">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                                <br>
+                                elit. Ut elit tellus, luctus nec ullamcorper mattis,
+                                <br>
+                                pulvinar dapibus leo.
+                            </p>
+                            <div class="client-info">
+                                <img src="imgs/client-03.jpg" class="client-image" alt="client-03">
+                                <span>BREAT LEU</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="client-one">
+                        <div class="client-text">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                                <br>
+                                elit. Ut elit tellus, luctus nec ullamcorper mattis,
+                                <br>
+                                pulvinar dapibus leo.
+                            </p>
+                            <div class="client-info">
+                                <img src="imgs/client-04.jpg" class="client-image" alt="client-04">
+                                <span>NANCY LOPEZ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="free-delivery">
+                <div class="delivery-text">
+                    <h2>Free Delivery</h2>
+                    <h3>
+                        To get free delivery,
+                        <br>
+                        download our app and
+                        <br>
+                        order online.
+                    </h3>
+                    <p>
+                        With a 10-year track record, we are the country's number one fast food
+                        <br>
+                        store. We provide some of the greatest burgers and pizza in the country.
+                    </p>
+                </div>
+                <div class="delivery-image">
+                    <img src="imgs/app-bg.png" alt="app">
+                </div>
+            </div>
+            <div class="application">
+                <h3>BOOK YOUR TABLE FOR THE BEST CHOW RIGHT NOW!</h3>
+                <button type="button" href="#" class="button">DOWNLOAD APP</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-box">
+            <div class="footer-contact">
+                <h5>CONTACT</h5>
+                <p>
+                    Lorem ipsum dolor sit amet,
+                    <br>
+                    consectet adipis cing elit.
+                    <br>
+                    Curabitur venenatis.
+                </p>
+                <address>
+                    1528 Broadway, New York, NY 10036, United
+                    <br> States <br>
+                    +12 34 567 891 23 email@your.domain
+                </address>
+            </div>
+            <div class="footer-daily">
+                <h5>WORKING</h5>
+                <ul class="day-list">
+                    <li>Monday 9:00 - 24:00</li>
+                    <li>Tuesday 9:00 - 24:00</li>
+                    <li>Wednesday 9:00 - 24:00</li>
+                    <li>Thursday 9:00 - 24:00</li>
+                    <li>Friday 9:00 - 02:00</li>
+                    <li>Saturday 9:00 - 02:00</li>
+                    <li>Sunday CLOSED</li>
+                </ul>
+            </div>
+            <div class="footer-help">
+                <h5>HELP</h5>
+                <ul class="help-list">
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">Customer Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-icon">
+                <h5>GET IN TOUCH</h5>
+                <a href="#">
+                    <i class="fa-brands fa-square-facebook"></i>
+                    <i class="fa-brands fa-square-twitter"></i>
+                    <i class="fa-brands fa-square-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
