@@ -4,19 +4,45 @@
      box-sizing: border-box;
 }
 
-/* start header */
+/* ============ Shared / Reusable ============ */
+.btn-primary {
+     display: inline-block;
+     text-align: center;
+     background-color: #a5141a;
+     color: white;
+     border: 1px solid transparent;
+     border-radius: 4px;
+     letter-spacing: 0.5px;
+     font-family: 'Bebas Neue', cursive;
+     font-size: 20px;
+     text-decoration: none;
+     padding: 15px 40px;
+     cursor: pointer;
+     transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+     background-color: goldenrod;
+     color: white;
+}
+
+/* ============ Header ============ */
 header {
-     background-image: url("../full/imgs/main.jpg");
+     background-image: url("../imgs/main.jpg");
      background-size: cover;
      background-position: center;
      width: 100%;
-     height: 800px;
+     min-height: 800px;
+     display: flex;
+     align-items: center;
 }
 
 .headertext {
      display: flex;
      flex-direction: column;
-     margin-left: 120px;
+     align-items: flex-start;
+     max-width: 90%;
+     margin-left: 8%;
 }
 
 .headertext h1 {
@@ -24,179 +50,159 @@ header {
      color: #ffb91a;
      font-size: 40px;
      font-weight: 100;
-     margin: 50px 0;
+     margin: 20px 0;
 }
 
 .headertext h2 {
      font-family: 'Bebas Neue', cursive;
      color: white;
-     font-size: 100px;
+     font-size: 70px;
      font-weight: 100;
-     line-height: 4.6rem;
+     line-height: 1.1;
 }
 
-.headertext button {
-     width: 15%;
-     background-color: #a5141a;
-     color: white;
-     border: 1px solid transparent;
-     border-radius: 3px;
-     letter-spacing: .5px;
-     font-family: 'Bebas Neue', cursive;
-     font-size: 20px;
-     padding: 15px 0;
-     margin-top: 50px;
+.headertext .btn-primary {
+     margin-top: 30px;
 }
 
-.headertext button:hover {
-     background-color: goldenrod;
-     transition-duration: .3s;
-}
-
-/* end header */
-
-/* start main */
+/* ============ Menu Section ============ */
 .menu-section {
      width: 100%;
-     height: 250px;
+     padding: 40px 20px;
      display: flex;
      flex-direction: row;
+     flex-wrap: wrap;
      justify-content: center;
      align-items: center;
-     gap: 50px;
+     gap: 40px;
 }
 
 .items {
-     width: 15%;
-     height: 80%;
+     width: 150px;
      display: flex;
      flex-direction: column;
      justify-content: center;
      align-items: center;
-     padding: 0;
+     padding: 15px;
+     border: 1px solid transparent;
+     border-radius: 5px;
+     transition: border-color 0.2s;
 }
 
 .items h3 {
      color: #383838;
-     font-size: 20px;
+     font-size: 18px;
      font-family: 'Bebas Neue', cursive;
      text-align: center;
-     margin-top: 20px;
+     margin-top: 15px;
 }
 
 .items img {
-     width: 25%;
-     height: 25%;
+     width: 60px;
+     height: auto;
 }
 
 .items:hover {
-     border: 1px solid gold;
-     border-radius: 5px;
+     border-color: gold;
 }
 
+/* ============ Order Section ============ */
 .order-section {
      width: 100%;
-     height: 120vh;
-     background-image: url("../full/imgs/special-bg.jpg");
+     background-image: url("../imgs/special-bg.jpg");
      background-size: cover;
      background-position: center;
      font-family: 'Bebas Neue', cursive;
      display: flex;
      justify-content: center;
+     padding: 60px 20px;
 }
 
 .order-card {
-     width: 80%;
+     width: 100%;
+     max-width: 1100px;
      display: flex;
      flex-direction: row;
+     flex-wrap: wrap;
      justify-content: center;
-     align-items: center;
+     align-items: stretch;
      gap: 20px;
 }
 
 .left-card {
-     width: 50%;
-     height: 95vh;
+     flex: 1 1 400px;
      display: flex;
      flex-direction: column;
-     background-image: url("../full/imgs/special-01.jpg");
+     background-image: url("../imgs/special-01.jpg");
      background-repeat: no-repeat;
      background-position: center;
      background-size: cover;
-     border-radius: 15px 0 0 15px;
-     padding: 100px 60px;
+     border-radius: 15px;
+     padding: 60px 40px;
 }
 
 .left-card h3 {
      color: #fff;
-     font-size: 50px;
+     font-size: 40px;
      font-weight: lighter;
-     line-height: 50px;
+     line-height: 1.1;
 }
 
 .left-card p {
      color: #fff;
-     font-size: 20px;
+     font-size: 18px;
      font-weight: 100;
      padding: 0;
-     margin: 0;
+     margin: 5px 0;
 }
 
 .left-card span {
      color: #ffb91a;
      font-weight: 100;
-     font-size: 35px;
+     font-size: 32px;
      margin: 20px 0;
 }
 
-.left-card button {
-     width: 30%;
-     background-color: #a5141a;
-     color: white;
-     border: 1px solid transparent;
-     border-radius: 4px;
-     font-family: 'Bebas Neue', cursive;
-     font-weight: lighter;
-     font-size: 20px;
-     padding: 10px 30px;
-}
-
-.left-card button:hover {
-     background-color: goldenrod;
-     transition-duration: 0.3s;
+.left-card .btn-primary {
+     width: fit-content;
 }
 
 .right-card {
-     width: 50%;
-     height: 100vh;
+     flex: 1 1 400px;
      display: flex;
      flex-direction: column;
      justify-content: center;
-     align-items: center;
      gap: 15px;
 }
 
 .order-box {
      width: 100%;
-     height: 360px;
-     background-image: url("../full/imgs/special-03.jpg");
+     min-height: 220px;
      background-position: center;
      background-size: cover;
-     border-radius: 0 0 15px 0;
+     border-radius: 15px;
      font-weight: bolder;
-     padding: 40px 0 0 60px;
+     padding: 30px 0 0 40px;
+}
+
+.order-minicard {
+     background-image: url("../imgs/special-03.jpg");
+}
+
+.order-box.order-second {
+     background-image: url("../imgs/special-02.jpg");
 }
 
 .order-box h3 {
      color: #fff;
-     font-size: 50px;
-     line-height: 50px;
+     font-size: 36px;
+     line-height: 1.1;
      font-weight: lighter;
 }
 
 .order-box p {
      color: #fff;
-     font-size: 20px;
+     font-size: 18px;
      font-weight: lighter;
      padding: 0;
      margin: 0;
@@ -205,38 +211,43 @@ header {
 .order-box span {
      color: #e0bb16;
      font-weight: lighter;
-     font-size: 28px;
+     font-size: 26px;
 }
 
-.order-minicard {
-     width: 100%;
-     background-image: url("../full/imgs/special-02.jpg");
-     background-position: center;
-     background-size: cover;
-     border-radius: 0 15px 0 0;
-}
-
-/* los-burger */
+/* ============ About / Los America Section ============ */
 .los-america {
-     height: 800px;
+     padding: 80px 20px;
      display: flex;
      flex-direction: row;
+     flex-wrap: wrap-reverse;
      justify-content: center;
+     align-items: center;
+     gap: 30px;
+}
+
+.los-burger img {
+     max-width: 100%;
+     height: auto;
+}
+
+.los-text {
+     max-width: 500px;
 }
 
 .los-text h3 {
      color: #a5141a;
      font-family: 'Pacifico', cursive;
-     font-size: 27px;
+     font-size: 24px;
      font-weight: 100;
-     margin: 180px 50px 0 0;
+     padding: 15px 0;
 }
 
 .los-text h2 {
      font-family: 'Bebas Neue', cursive;
-     font-size: 50px;
+     font-size: 45px;
      font-weight: lighter;
-     line-height: 50px;
+     line-height: 1.1;
+     padding: 15px 0;
 }
 
 .los-text p {
@@ -245,45 +256,24 @@ header {
      font-size: 15px;
      line-height: 25px;
      font-weight: bold;
-}
-
-.los-text button {
-     background-color: #a5141a;
-     color: white;
-     border: 1px solid transparent;
-     border-radius: 4px;
-     letter-spacing: 1px;
-     font-family: 'Bebas Neue', cursive;
-     font-weight: 400;
-     font-size: 19px;
-     padding: 15px 40px;
-     margin: 30px 0 0 0px;
-}
-
-.los-text button:hover {
-     background-color: goldenrod;
-     transition-duration: 0.2s;
-}
-
-.los-text h3,
-h2,
-p {
      padding: 15px 0;
 }
 
-.los-burger img {
-     padding-top: 130px;
-     margin: 0 120px 12px 0;
+.los-text .btn-primary {
+     margin-top: 20px;
 }
 
+/* ============ Masterpiece / Full Menu ============ */
 .masterpiece {
-     background-image: url("../full/imgs/delivery.jpg");
+     background-image: url("../imgs/delivery.jpg");
      width: 100%;
-     height: 100vh;
+     min-height: 70vh;
      background-position: center;
      background-size: cover;
      display: flex;
      justify-content: center;
+     align-items: center;
+     padding: 40px 20px;
 }
 
 .fullmenu-box {
@@ -291,103 +281,94 @@ p {
      flex-direction: column;
      align-items: center;
      justify-content: center;
+     text-align: center;
 }
 
 .fullmenu-box h3 {
      font-family: 'Pacifico', cursive;
-     font-size: 25px;
+     font-size: 22px;
      letter-spacing: 1px;
      color: #a5141a;
-     padding: 0px 0 0 0px;
 }
 
 .fullmenu-box h2 {
      color: #fff;
      font-family: 'Bebas Neue', cursive;
-     font-size: 110px;
+     font-size: 70px;
      font-weight: lighter;
-     line-height: 110px;
-     text-align: center;
+     line-height: 1.1;
+     margin: 20px 0;
 }
 
-.fullmenu-box button {
-     background-color: #a5141a;
-     color: white;
-     border: 1px solid transparent;
-     border-radius: 5px;
-     letter-spacing: 1px;
-     font-family: 'Bebas Neue', cursive;
-     font-weight: 400;
-     font-size: 19px;
-     padding: 15px 40px;
-     margin: 0 300px;
-}
-
-.fullmenu-box button:hover {
-     background-color: goldenrod;
-     transition-duration: 0.2s;
-}
-
+/* ============ Daily Stats ============ */
 .daily-box {
      width: 100%;
-     width: auto;
      background-color: #ffb91a;
      display: flex;
      justify-content: space-around;
      flex-direction: row;
+     flex-wrap: wrap;
      text-align: center;
+     padding: 20px 10px;
+     gap: 10px;
+}
+
+.daily-box>div {
+     min-width: 120px;
 }
 
 .daily-box h3 {
      color: #fff;
      font-family: 'Pacifico', cursive;
      font-weight: lighter;
-     font-size: 50px;
+     font-size: 40px;
      padding-top: 10px;
 }
 
 .daily-box p {
      color: #fff;
      font-family: 'Epilogue', sans-serif;
-     font-size: 18px;
+     font-size: 16px;
      font-weight: 900;
-     padding: 0 0 0 0;
-     margin-bottom: 20px;
+     margin-bottom: 10px;
 }
 
+/* ============ Main Dishes ============ */
 .main-dishes {
      width: 100%;
-     height: 110vh;
+     padding: 60px 20px;
      display: flex;
      flex-direction: row;
+     flex-wrap: wrap;
      justify-content: center;
      align-items: center;
+     gap: 30px;
 }
 
 .main-menu {
      color: white;
      background-color: #a5141a;
-     width: 40%;
-     height: 98vh;
+     flex: 1 1 400px;
+     max-width: 500px;
      border: 1px solid white;
      border-radius: 15px;
-     padding: 50px;
-     margin: 100px 0 0 90px;
+     padding: 40px;
 }
 
 .main-menu h2 {
      font-family: 'Bebas Neue', cursive;
      text-align: left;
-     line-height: 100px;
-     font-size: 50px;
+     line-height: 1.4;
+     font-size: 40px;
      font-weight: 500;
+     margin-bottom: 15px;
 }
 
 .main-menu h3 {
      font-family: 'Bebas Neue', cursive;
      text-align: left;
-     line-height: 40px;
-     font-size: 25px;
+     line-height: 1.4;
+     font-size: 22px;
      font-weight: 500;
 }
 
@@ -400,74 +381,78 @@ p {
 }
 
 .main-image {
-     width: 50%;
-     height: 100vh;
+     flex: 1 1 300px;
+     max-width: 400px;
      display: flex;
      justify-content: center;
      align-items: center;
 }
 
 .main-image img {
-     width: 80%;
-     height: 60vh;
+     width: 100%;
+     height: auto;
 }
 
+/* ============ Recommended ============ */
 .recommended-section {
      width: 100%;
      background-color: #f8f8f8;
+     padding-bottom: 40px;
 }
 
 .recommended-text {
-     width: 80%;
+     max-width: 900px;
      margin: 0 auto;
+     text-align: center;
+     padding: 0 20px;
 }
 
 .recommended-text>h2 {
      color: #a5141a;
      font-family: 'Pacifico', cursive;
-     font-size: 27px;
+     font-size: 24px;
      font-weight: lighter;
-     text-align: center;
-     padding-top: 90px;
+     padding-top: 60px;
 }
 
 .recommended-text>h3 {
      font-family: 'Bebas Neue', cursive;
-     font-size: 50px;
+     font-size: 42px;
      font-weight: 100;
-     text-align: center;
-     line-height: 60px;
+     line-height: 1.3;
      color: black;
-     padding: 35px 60px 0 55px;
+     padding: 20px 0;
 }
 
 .recommended-text>p {
      color: #6b6b6b;
      font-family: 'Epilogue', sans-serif;
-     text-align: center;
      font-size: 15px;
      font-weight: bold;
-     padding: 40px 0 30px 0;
+     padding-bottom: 20px;
 }
 
 .recommended-cards {
-     /* background-color: darkorchid; */
+     max-width: 1100px;
+     margin: 0 auto;
      display: flex;
-     justify-content: space-around;
+     justify-content: center;
      flex-wrap: wrap;
+     gap: 20px;
+     padding: 0 20px;
 }
 
 .recommended-card {
-     width: 42%;
+     flex: 1 1 400px;
+     max-width: 480px;
      display: flex;
+     flex-wrap: wrap;
      justify-content: center;
      align-items: center;
      border: 1px solid transparent;
      border-radius: 15px;
-     box-shadow: 16px 16px 32px #c7c7c7,
-          -16px -16px 32px #f9f9f9;
-     padding: 40px 0;
-     margin: 25px 0 25px 0;
+     box-shadow: 16px 16px 32px #c7c7c7, -16px -16px 32px #f9f9f9;
+     padding: 30px 20px;
 }
 
 .recommended-card:hover {
@@ -476,8 +461,7 @@ p {
 }
 
 .recommended-card-image {
-     width: 48%;
-     height: 100%;
+     flex: 1 1 150px;
      display: flex;
      justify-content: center;
      align-items: center;
@@ -489,8 +473,7 @@ p {
 }
 
 .recommended-card-details {
-     width: 48%;
-     height: 100%;
+     flex: 1 1 200px;
      display: flex;
      flex-direction: column;
      justify-content: center;
@@ -499,128 +482,124 @@ p {
 
 .recommended-card-details h3 {
      color: #383838;
-     font-size: 23px;
+     font-size: 21px;
      font-family: 'Bebas Neue', cursive;
-     line-height: 23px;
+     line-height: 1.2;
      font-weight: 300;
-     padding: 0 0 0 30px;
+     padding-left: 15px;
 }
 
 .recommended-card-details h5 {
      color: #a5141a;
-     font-size: 23px;
+     font-size: 21px;
      font-family: 'Bebas Neue', cursive;
      font-weight: lighter;
-     padding: 20px 0 20px 30px;
+     padding: 15px 0 15px 15px;
 }
 
 .recommended-card-details p {
      color: #6b6b6b;
-     font-size: 15px;
+     font-size: 14px;
      font-family: 'Epilogue', sans-serif;
      line-height: 20px;
      font-weight: 600;
-     padding: 0 0 0 30px;
+     padding-left: 15px;
 }
 
 .recommended-card-details a {
+     display: inline-block;
      color: #383838;
      font-family: 'Bebas Neue', cursive;
      text-decoration: none;
-     padding: 3px 0 0 30px;
+     padding: 10px 0 0 15px;
 }
 
+.recommended-card-details a:hover {
+     color: #a5141a;
+     text-decoration: underline;
+}
+
+/* ============ Popular Foods ============ */
 .popular-foods {
-     background-image: url("../full/imgs/fav-bg.jpg");
+     background-image: url("../imgs/fav-bg.jpg");
      width: 100%;
-     height: 700px;
+     min-height: 60vh;
      background-position: center;
      background-size: cover;
      display: flex;
      justify-content: center;
-     margin-top: 100px;
+     align-items: center;
+     margin-top: 60px;
+     padding: 40px 20px;
 }
 
 .preferred-foods {
-     /* background-color: #ffc107; */
      display: flex;
      flex-direction: column;
      align-items: center;
      justify-content: center;
+     text-align: center;
 }
 
 .preferred-foods h3 {
      font-family: 'Bebas Neue', cursive;
-     font-size: 110px;
+     font-size: 60px;
      font-weight: 100;
-     text-align: center;
-     letter-spacing: 2px;
-     line-height: 110px;
+     letter-spacing: 1px;
+     line-height: 1.1;
      color: #fff;
-     margin: 60px 100px 0 100px;
+     margin-bottom: 20px;
 }
 
 .preferred-foods h2 {
      color: #a5141a;
      font-family: 'Pacifico', cursive;
-     font-size: 28px;
+     font-size: 26px;
      font-weight: lighter;
-     text-align: center;
-     margin-top: 160px;
+     margin-bottom: 25px;
 }
 
-.preferred-foods button {
-     background-color: #a5141a;
-     color: white;
-     border: 1px solid transparent;
-     border-radius: 5px;
-     letter-spacing: 1px;
-     font-family: 'Bebas Neue', cursive;
-     font-weight: lighter;
-     font-size: 20px;
-     padding: 15px 39px;
-     margin: 60px 210px 150px 200px;
+.preferred-foods .btn-primary {
+     margin-top: 20px;
 }
 
-.preferred-foods button:hover {
-     background-color: goldenrod;
-     transition-duration: 0.2s;
-}
-
+/* ============ Feedback ============ */
 .feedback {
-     background-attachment: fixed;
-     background-image: url("../full/imgs/special-bg.jpg");
+     background-image: url("../imgs/special-bg.jpg");
      width: 100%;
-     height: 160vh;
      background-position: center;
      background-size: cover;
      display: flex;
      flex-direction: column;
-     justify-content: space-around;
+     justify-content: center;
+     padding: 60px 20px;
+     gap: 40px;
 }
 
+/* background-attachment: fixed causes major issues on mobile (esp. iOS),
+   so it is applied only on larger screens - see media query below */
+
 .feedback-text {
-     width: 40%;
-     height: 70vh;
+     max-width: 600px;
      margin: 0 auto;
+     text-align: center;
 }
 
 .feedback-text h2 {
      color: #a5141a;
      font-family: 'Pacifico', cursive;
-     font-size: 27px;
+     font-size: 24px;
      font-weight: lighter;
-     padding: 140px 0 0 200px;
 }
 
 .feedback-text h3 {
      font-family: 'Bebas Neue', cursive;
-     font-size: 50px;
+     font-size: 42px;
      font-weight: 100;
      letter-spacing: 1px;
-     line-height: 60px;
+     line-height: 1.2;
      color: black;
-     padding: 43px 0 0 90px;
+     margin: 15px 0;
 }
 
 .feedback-text p {
@@ -628,92 +607,93 @@ p {
      font-family: 'Epilogue', sans-serif;
      font-size: 15px;
      font-weight: bold;
-     padding: 45px 0 70px 70px;
 }
 
 .feedback-clients {
-     width: 90%;
-     height: 100vh;
+     max-width: 1000px;
+     margin: 0 auto;
      display: flex;
      flex-direction: row;
      flex-wrap: wrap;
-     justify-content: space-evenly;
-     align-items: center;
-     margin: 0 auto 80px auto;
+     justify-content: center;
+     align-items: stretch;
+     gap: 20px;
 }
 
 .client-one {
      background-color: white;
-     width: 46%;
-     height: 220px;
+     flex: 1 1 350px;
+     max-width: 460px;
+     min-height: 220px;
      border-radius: 15px;
+     padding: 20px;
 }
 
 .client-text p {
      color: #6b6b6b;
-     height: 90px;
      text-align: center;
      line-height: 25px;
      font-family: 'Epilogue', sans-serif;
-     font-size: 17px;
+     font-size: 16px;
      font-weight: bold;
-     padding-top: 20px;
 }
 
 .client-info {
      width: 100%;
-     height: 100px;
      display: flex;
      align-items: center;
-     margin-top: 5px;
+     margin-top: 15px;
 }
 
 .client-info span {
      color: #a5141a;
-     font-size: 20px;
+     font-size: 18px;
      font-weight: 500;
      text-transform: uppercase;
-     margin: 0 0 0 20px;
+     margin-left: 15px;
 }
 
 .client-image {
-     width: 2.25cm;
+     width: 55px;
+     height: 55px;
+     object-fit: cover;
      border-radius: 100px;
-     margin: 0 0 0 180px;
 }
 
+/* ============ Free Delivery ============ */
 .free-delivery {
      width: 100%;
      display: flex;
      flex-direction: row;
+     flex-wrap: wrap;
      justify-content: center;
+     align-items: center;
+     padding: 40px 20px;
+     gap: 20px;
 }
 
 .delivery-text {
-     color: white;
-     width: 50%;
-     height: 80vh;
+     flex: 1 1 350px;
+     max-width: 500px;
      padding: 5px;
-     margin: 20px 0 0 50px;
 }
 
 .delivery-text h2 {
      color: #a5141a;
      font-family: 'Pacifico', cursive;
-     line-height: 100px;
-     font-size: 27px;
+     line-height: 1.3;
+     font-size: 24px;
      font-weight: 500;
-     margin: 70px 0 0 70px;
 }
 
 .delivery-text h3 {
      color: black;
      font-family: 'Bebas Neue', cursive;
      text-align: left;
-     font-size: 60px;
+     font-size: 45px;
      font-weight: 500;
-     line-height: 60px;
-     margin: 20px 0 0 70px;
+     line-height: 1.2;
+     margin-top: 15px;
 }
 
 .delivery-text p {
@@ -723,88 +703,84 @@ p {
      font-size: 16px;
      line-height: 25px;
      font-weight: bold;
-     margin: 20px 0 0 70px;
+     margin-top: 15px;
 }
 
 .delivery-image {
-     width: 50%;
-     height: 100vh;
+     flex: 1 1 300px;
+     max-width: 400px;
+     display: flex;
+     justify-content: center;
 }
 
 .delivery-image img {
-     width: 63%;
-     height: 50vh;
-     margin: 140px 0 0 40px;
+     width: 90%;
+     height: auto;
 }
 
+/* ============ Application Banner ============ */
 .application {
      background-color: #a5141a;
      width: 100%;
-     height: 120px;
      display: flex;
      flex-direction: row;
-     justify-content: space-around;
+     flex-wrap: wrap;
+     justify-content: center;
      align-items: center;
+     gap: 20px;
+     padding: 25px 20px;
+     text-align: center;
 }
 
 .application h3 {
      color: white;
      font-family: 'Bebas Neue', cursive;
-     text-align: left;
-     font-size: 25px;
+     font-size: 22px;
      font-weight: 100;
      margin: 0;
 }
 
-.application button {
-     width: 10%;
+.application .btn-primary {
      background-color: #ffb91a;
-     color: white;
-     border: 1px solid transparent;
-     border-radius: 5px;
-     font-family: 'Bebas Neue', cursive;
-     font-weight: 400;
-     font-size: 20px;
-     padding: 15px 0;
 }
 
-.application button:hover {
+.application .btn-primary:hover {
      color: black;
      background-color: white;
-     transition-duration: 0.2s;
 }
 
+/* ============ Footer ============ */
 footer {
      width: 100%;
-     height: 400px;
+     padding: 50px 20px;
      display: flex;
      justify-content: center;
-     align-items: center;
 }
 
 .footer-box {
-     width: 80%;
-     height: 100%;
+     width: 100%;
+     max-width: 1200px;
      display: flex;
      flex-direction: row;
+     flex-wrap: wrap;
      justify-content: space-between;
-     align-items: baseline;
+     gap: 30px;
 }
 
-.footer-contact {
-     width: 20%;
-     height: 100%;
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
+.footer-box>div {
+     flex: 1 1 200px;
 }
 
-.footer-contact h5 {
+.footer-contact h5,
+.footer-daily h5,
+.footer-help h5,
+.footer-icon h5 {
      color: black;
      font-family: 'Bebas Neue', cursive;
      text-align: left;
      font-size: 20px;
      font-weight: 500;
+     margin-bottom: 10px;
 }
 
 .footer-contact p {
@@ -817,22 +793,18 @@ footer {
 }
 
 .footer-contact address {
+     display: block;
      color: black;
      font-family: 'Bebas Neue', cursive;
+     font-style: normal;
      text-align: left;
      font-size: 15px;
      font-weight: lighter;
+     margin-top: 10px;
 }
 
-.footer-daily h5 {
-     color: black;
-     font-family: 'Bebas Neue', cursive;
-     text-align: left;
-     font-size: 20px;
-     font-weight: 500;
-}
-
-.day-list {
+.day-list,
+.help-list {
      color: #6b6b6b;
      font-family: 'Epilogue', sans-serif;
      text-align: left;
@@ -842,28 +814,7 @@ footer {
      padding: 0;
 }
 
-.day-list li {
-     list-style-type: none;
-     padding-top: 3px;
-}
-
-.footer-help h5 {
-     color: black;
-     font-family: 'Bebas Neue', cursive;
-     text-align: left;
-     font-size: 20px;
-     font-weight: 500;
-}
-
-.help-list {
-     color: #6b6b6b;
-     font-family: 'Epilogue', sans-serif;
-     font-size: 15px;
-     line-height: 25px;
-     font-weight: bolder;
-     padding: 0;
-}
-
+.day-list li,
 .help-list li {
      list-style-type: none;
      padding: 3px 0;
@@ -879,17 +830,76 @@ footer {
      color: #a5141a;
 }
 
-.footer-icon h5 {
-     color: black;
-     font-family: 'Bebas Neue', cursive;
-     text-align: left;
-     font-size: 20px;
-     font-weight: 500;
-}
-
 .footer-icon a {
      color: #a5141a;
-     font-size: 30px;
+     font-size: 26px;
      text-decoration: none;
-     padding: 0 5px;
+     padding-right: 10px;
+}
+
+@media (max-width: 900px) {
+     .headertext h2 {
+          font-size: 50px;
+     }
+
+     .fullmenu-box h2 {
+          font-size: 50px;
+     }
+
+     .preferred-foods h3 {
+          font-size: 45px;
+     }
+
+     .feedback {
+          background-attachment: scroll;
+     }
+}
+
+@media (max-width: 600px) {
+     .headertext {
+          margin-left: 5%;
+          align-items: center;
+          text-align: center;
+     }
+
+     .headertext h1 {
+          font-size: 30px;
+     }
+
+     .headertext h2 {
+          font-size: 38px;
+     }
+
+     .los-america {
+          text-align: center;
+     }
+
+     .los-text h2 {
+          font-size: 34px;
+     }
+
+     .delivery-text h3,
+     .delivery-text p,
+     .delivery-text h2 {
+          text-align: center;
+     }
+
+     .application {
+          text-align: center;
+          flex-direction: column;
+     }
+
+     .fullmenu-box h2 {
+          font-size: 38px;
+     }
+
+     .preferred-foods h3 {
+          font-size: 32px;
+     }
+
+     .main-menu h2,
+     .main-menu h3,
+     .main-menu p {
+          text-align: center;
+     }
 }
