@@ -74,11 +74,11 @@ header {
      flex-wrap: wrap;
      justify-content: center;
      align-items: center;
-     gap: 40px;
+     gap: 50px;
 }
 
 .items {
-     width: 150px;
+     width: 180px;
      display: flex;
      flex-direction: column;
      justify-content: center;
@@ -98,7 +98,7 @@ header {
 }
 
 .items img {
-     width: 60px;
+     width: 80px;
      height: auto;
 }
 
@@ -187,10 +187,12 @@ header {
 
 .order-minicard {
      background-image: url("../imgs/special-03.jpg");
+     height: 300px;
 }
 
 .order-box.order-second {
      background-image: url("../imgs/special-02.jpg");
+     height: 300px;
 }
 
 .order-box h3 {
@@ -222,11 +224,11 @@ header {
      flex-wrap: wrap-reverse;
      justify-content: center;
      align-items: center;
-     gap: 30px;
+     gap: 50px;
 }
 
 .los-burger img {
-     max-width: 100%;
+     max-width: 90%;
      height: auto;
 }
 
@@ -342,7 +344,7 @@ header {
      flex-wrap: wrap;
      justify-content: center;
      align-items: center;
-     gap: 30px;
+     gap: 100px;
 }
 
 .main-menu {
@@ -382,7 +384,7 @@ header {
 
 .main-image {
      flex: 1 1 300px;
-     max-width: 400px;
+     max-width: 600px;
      display: flex;
      justify-content: center;
      align-items: center;
@@ -397,7 +399,7 @@ header {
 .recommended-section {
      width: 100%;
      background-color: #f8f8f8;
-     padding-bottom: 40px;
+     margin-bottom: 100px;
 }
 
 .recommended-text {
@@ -523,14 +525,12 @@ header {
 .popular-foods {
      background-image: url("../imgs/fav-bg.jpg");
      width: 100%;
-     min-height: 60vh;
+     min-height: 70vh;
      background-position: center;
      background-size: cover;
      display: flex;
      justify-content: center;
      align-items: center;
-     margin-top: 60px;
-     padding: 40px 20px;
 }
 
 .preferred-foods {
@@ -572,12 +572,9 @@ header {
      display: flex;
      flex-direction: column;
      justify-content: center;
-     padding: 60px 20px;
+     padding: 80px 0;
      gap: 40px;
 }
-
-/* background-attachment: fixed causes major issues on mobile (esp. iOS),
-   so it is applied only on larger screens - see media query below */
 
 .feedback-text {
      max-width: 600px;
@@ -620,11 +617,12 @@ header {
      gap: 20px;
 }
 
-.client-one {
+.client-card {
      background-color: white;
      flex: 1 1 350px;
      max-width: 460px;
      min-height: 220px;
+     border-bottom: 2px solid #ccc;
      border-radius: 15px;
      padding: 20px;
 }
@@ -668,7 +666,7 @@ header {
      flex-wrap: wrap;
      justify-content: center;
      align-items: center;
-     padding: 40px 20px;
+     padding: 60px 0;
      gap: 20px;
 }
 
@@ -725,9 +723,8 @@ header {
      display: flex;
      flex-direction: row;
      flex-wrap: wrap;
-     justify-content: center;
+     justify-content: space-evenly;
      align-items: center;
-     gap: 20px;
      padding: 25px 20px;
      text-align: center;
 }
