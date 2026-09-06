@@ -4,6 +4,21 @@
      box-sizing: border-box;
 }
 
+html {
+     scroll-behavior: smooth;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+     html {
+          scroll-behavior: auto;
+     }
+
+     * {
+          transition: none !important;
+     }
+}
+
 /* ============ Shared / Reusable ============ */
 .btn-primary {
      display: inline-block;
@@ -21,9 +36,62 @@
      transition: background-color 0.2s;
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-primary:focus-visible {
      background-color: goldenrod;
      color: white;
+}
+
+a:focus-visible,
+button:focus-visible {
+     outline: 3px solid #ffb91a;
+     outline-offset: 2px;
+}
+
+/* ============ Top Navigation ============ */
+.site-nav {
+     position: sticky;
+     top: 0;
+     left: 0;
+     width: 100%;
+     z-index: 100;
+     background-color: rgba(20, 20, 20, 0.9);
+     -webkit-backdrop-filter: blur(6px);
+     backdrop-filter: blur(6px);
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     flex-wrap: wrap;
+     padding: 15px 8%;
+     gap: 10px;
+}
+
+.site-nav .logo {
+     font-family: 'Pacifico', cursive;
+     color: #ffb91a;
+     font-size: 24px;
+     text-decoration: none;
+}
+
+.site-nav .nav-links {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 25px;
+     list-style: none;
+     padding: 0;
+     margin: 0;
+}
+
+.site-nav .nav-links a {
+     color: #fff;
+     font-family: 'Bebas Neue', cursive;
+     font-size: 17px;
+     letter-spacing: 0.5px;
+     text-decoration: none;
+}
+
+.site-nav .nav-links a:hover {
+     color: #ffb91a;
 }
 
 /* ============ Header ============ */
@@ -32,12 +100,12 @@ header {
      background-size: cover;
      background-position: center;
      width: 100%;
-     min-height: 800px;
+     min-height: 750px;
      display: flex;
      align-items: center;
 }
 
-.headertext {
+.hero-content {
      display: flex;
      flex-direction: column;
      align-items: flex-start;
@@ -45,7 +113,7 @@ header {
      margin-left: 8%;
 }
 
-.headertext h1 {
+.hero-content h1 {
      font-family: 'Pacifico', cursive;
      color: #ffb91a;
      font-size: 40px;
@@ -53,7 +121,7 @@ header {
      margin: 20px 0;
 }
 
-.headertext h2 {
+.hero-content h2 {
      font-family: 'Bebas Neue', cursive;
      color: white;
      font-size: 70px;
@@ -61,12 +129,12 @@ header {
      line-height: 1.1;
 }
 
-.headertext .btn-primary {
+.hero-content .btn-primary {
      margin-top: 30px;
 }
 
-/* ============ Menu Section ============ */
-.menu-section {
+/* ============ Menu Categories ============ */
+.menu-categories {
      width: 100%;
      padding: 40px 20px;
      display: flex;
@@ -77,7 +145,7 @@ header {
      gap: 50px;
 }
 
-.items {
+.category-item {
      width: 180px;
      display: flex;
      flex-direction: column;
@@ -89,7 +157,7 @@ header {
      transition: border-color 0.2s;
 }
 
-.items h3 {
+.category-item h3 {
      color: #383838;
      font-size: 18px;
      font-family: 'Bebas Neue', cursive;
@@ -97,17 +165,17 @@ header {
      margin-top: 15px;
 }
 
-.items img {
+.category-item img {
      width: 80px;
      height: auto;
 }
 
-.items:hover {
+.category-item:hover {
      border-color: gold;
 }
 
-/* ============ Order Section ============ */
-.order-section {
+/* ============ Offers Section ============ */
+.offers-section {
      width: 100%;
      background-image: url("../imgs/special-bg.jpg");
      background-size: cover;
@@ -118,7 +186,7 @@ header {
      padding: 60px 20px;
 }
 
-.order-card {
+.offers-layout {
      width: 100%;
      max-width: 1100px;
      display: flex;
@@ -129,7 +197,7 @@ header {
      gap: 20px;
 }
 
-.left-card {
+.feature-offer {
      flex: 1 1 400px;
      display: flex;
      flex-direction: column;
@@ -141,14 +209,14 @@ header {
      padding: 60px 40px;
 }
 
-.left-card h3 {
+.feature-offer h3 {
      color: #fff;
      font-size: 40px;
      font-weight: lighter;
      line-height: 1.1;
 }
 
-.left-card p {
+.feature-offer p {
      color: #fff;
      font-size: 18px;
      font-weight: 100;
@@ -156,18 +224,18 @@ header {
      margin: 5px 0;
 }
 
-.left-card span {
+.feature-offer span {
      color: #ffb91a;
      font-weight: 100;
      font-size: 32px;
      margin: 20px 0;
 }
 
-.left-card .btn-primary {
+.feature-offer .btn-primary {
      width: fit-content;
 }
 
-.right-card {
+.offer-stack {
      flex: 1 1 400px;
      display: flex;
      flex-direction: column;
@@ -175,9 +243,9 @@ header {
      gap: 15px;
 }
 
-.order-box {
+.offer-card {
      width: 100%;
-     min-height: 220px;
+     min-height: 300px;
      background-position: center;
      background-size: cover;
      border-radius: 15px;
@@ -185,24 +253,22 @@ header {
      padding: 30px 0 0 40px;
 }
 
-.order-minicard {
+.offer-card--discovery {
      background-image: url("../imgs/special-03.jpg");
-     height: 300px;
 }
 
-.order-box.order-second {
+.offer-card--combo {
      background-image: url("../imgs/special-02.jpg");
-     height: 300px;
 }
 
-.order-box h3 {
+.offer-card h3 {
      color: #fff;
      font-size: 36px;
      line-height: 1.1;
      font-weight: lighter;
 }
 
-.order-box p {
+.offer-card p {
      color: #fff;
      font-size: 18px;
      font-weight: lighter;
@@ -210,15 +276,15 @@ header {
      margin: 0;
 }
 
-.order-box span {
+.offer-card span {
      color: #e0bb16;
      font-weight: lighter;
      font-size: 26px;
 }
 
-/* ============ About / Los America Section ============ */
-.los-america {
-     padding: 80px 20px;
+/* ============ About Section ============ */
+.about-section {
+     padding: 80px;
      display: flex;
      flex-direction: row;
      flex-wrap: wrap-reverse;
@@ -227,16 +293,16 @@ header {
      gap: 50px;
 }
 
-.los-burger img {
+.about-image img {
      max-width: 90%;
      height: auto;
 }
 
-.los-text {
+.about-text {
      max-width: 500px;
 }
 
-.los-text h3 {
+.about-text h3 {
      color: #a5141a;
      font-family: 'Pacifico', cursive;
      font-size: 24px;
@@ -244,7 +310,7 @@ header {
      padding: 15px 0;
 }
 
-.los-text h2 {
+.about-text h2 {
      font-family: 'Bebas Neue', cursive;
      font-size: 45px;
      font-weight: lighter;
@@ -252,7 +318,7 @@ header {
      padding: 15px 0;
 }
 
-.los-text p {
+.about-text p {
      color: #6b6b6b;
      font-family: 'Epilogue', sans-serif;
      font-size: 15px;
@@ -261,12 +327,12 @@ header {
      padding: 15px 0;
 }
 
-.los-text .btn-primary {
+.about-text .btn-primary {
      margin-top: 20px;
 }
 
-/* ============ Masterpiece / Full Menu ============ */
-.masterpiece {
+/* ============ CTA Banner (full menu) ============ */
+.cta-banner {
      background-image: url("../imgs/delivery.jpg");
      width: 100%;
      min-height: 70vh;
@@ -278,7 +344,7 @@ header {
      padding: 40px 20px;
 }
 
-.fullmenu-box {
+.cta-content {
      display: flex;
      flex-direction: column;
      align-items: center;
@@ -286,14 +352,14 @@ header {
      text-align: center;
 }
 
-.fullmenu-box h3 {
+.cta-content h3 {
      font-family: 'Pacifico', cursive;
      font-size: 22px;
      letter-spacing: 1px;
      color: #a5141a;
 }
 
-.fullmenu-box h2 {
+.cta-content h2 {
      color: #fff;
      font-family: 'Bebas Neue', cursive;
      font-size: 70px;
@@ -302,8 +368,8 @@ header {
      margin: 20px 0;
 }
 
-/* ============ Daily Stats ============ */
-.daily-box {
+/* ============ Stats Section ============ */
+.stats-section {
      width: 100%;
      background-color: #ffb91a;
      display: flex;
@@ -315,11 +381,11 @@ header {
      gap: 10px;
 }
 
-.daily-box>div {
+.stat-item {
      min-width: 120px;
 }
 
-.daily-box h3 {
+.stat-item h3 {
      color: #fff;
      font-family: 'Pacifico', cursive;
      font-weight: lighter;
@@ -327,7 +393,7 @@ header {
      padding-top: 10px;
 }
 
-.daily-box p {
+.stat-item p {
      color: #fff;
      font-family: 'Epilogue', sans-serif;
      font-size: 16px;
@@ -347,7 +413,7 @@ header {
      gap: 100px;
 }
 
-.main-menu {
+.dish-list {
      color: white;
      background-color: #a5141a;
      flex: 1 1 400px;
@@ -357,7 +423,7 @@ header {
      padding: 40px;
 }
 
-.main-menu h2 {
+.dish-list h2 {
      font-family: 'Bebas Neue', cursive;
      text-align: left;
      line-height: 1.4;
@@ -366,7 +432,7 @@ header {
      margin-bottom: 15px;
 }
 
-.main-menu h3 {
+.dish-list h3 {
      font-family: 'Bebas Neue', cursive;
      text-align: left;
      line-height: 1.4;
@@ -374,7 +440,7 @@ header {
      font-weight: 500;
 }
 
-.main-menu p {
+.dish-list p {
      font-family: 'Epilogue', sans-serif;
      text-align: left;
      font-size: 15px;
@@ -382,7 +448,7 @@ header {
      padding-bottom: 20px;
 }
 
-.main-image {
+.dish-image {
      flex: 1 1 300px;
      max-width: 600px;
      display: flex;
@@ -390,7 +456,7 @@ header {
      align-items: center;
 }
 
-.main-image img {
+.dish-image img {
      width: 100%;
      height: auto;
 }
@@ -521,8 +587,8 @@ header {
      text-decoration: underline;
 }
 
-/* ============ Popular Foods ============ */
-.popular-foods {
+/* ============ Popular Section ============ */
+.popular-section {
      background-image: url("../imgs/fav-bg.jpg");
      width: 100%;
      min-height: 70vh;
@@ -533,7 +599,7 @@ header {
      align-items: center;
 }
 
-.preferred-foods {
+.popular-content {
      display: flex;
      flex-direction: column;
      align-items: center;
@@ -541,7 +607,7 @@ header {
      text-align: center;
 }
 
-.preferred-foods h3 {
+.popular-content h3 {
      font-family: 'Bebas Neue', cursive;
      font-size: 60px;
      font-weight: 100;
@@ -551,7 +617,7 @@ header {
      margin-bottom: 20px;
 }
 
-.preferred-foods h2 {
+.popular-content h2 {
      color: #a5141a;
      font-family: 'Pacifico', cursive;
      font-size: 26px;
@@ -559,12 +625,12 @@ header {
      margin-bottom: 25px;
 }
 
-.preferred-foods .btn-primary {
+.popular-content .btn-primary {
      margin-top: 20px;
 }
 
-/* ============ Feedback ============ */
-.feedback {
+/* ============ Testimonials ============ */
+.testimonials-section {
      background-image: url("../imgs/special-bg.jpg");
      width: 100%;
      background-position: center;
@@ -572,24 +638,24 @@ header {
      display: flex;
      flex-direction: column;
      justify-content: center;
-     padding: 80px 0;
+     padding: 80px 20px;
      gap: 40px;
 }
 
-.feedback-text {
+.testimonials-intro {
      max-width: 600px;
      margin: 0 auto;
      text-align: center;
 }
 
-.feedback-text h2 {
+.testimonials-intro h2 {
      color: #a5141a;
      font-family: 'Pacifico', cursive;
      font-size: 24px;
      font-weight: lighter;
 }
 
-.feedback-text h3 {
+.testimonials-intro h3 {
      font-family: 'Bebas Neue', cursive;
      font-size: 42px;
      font-weight: 100;
@@ -599,14 +665,14 @@ header {
      margin: 15px 0;
 }
 
-.feedback-text p {
+.testimonials-intro p {
      color: #6b6b6b;
      font-family: 'Epilogue', sans-serif;
      font-size: 15px;
      font-weight: bold;
 }
 
-.feedback-clients {
+.testimonial-grid {
      max-width: 1000px;
      margin: 0 auto;
      display: flex;
@@ -617,7 +683,7 @@ header {
      gap: 20px;
 }
 
-.client-card {
+.testimonial-card {
      background-color: white;
      flex: 1 1 350px;
      max-width: 460px;
@@ -627,7 +693,7 @@ header {
      padding: 20px;
 }
 
-.client-text p {
+.testimonial-text {
      color: #6b6b6b;
      text-align: center;
      line-height: 25px;
@@ -636,14 +702,14 @@ header {
      font-weight: bold;
 }
 
-.client-info {
+.testimonial-author {
      width: 100%;
      display: flex;
      align-items: center;
      margin-top: 15px;
 }
 
-.client-info span {
+.testimonial-author span {
      color: #a5141a;
      font-size: 18px;
      font-weight: 500;
@@ -651,7 +717,7 @@ header {
      margin-left: 15px;
 }
 
-.client-image {
+.author-avatar {
      width: 55px;
      height: 55px;
      object-fit: cover;
@@ -666,7 +732,7 @@ header {
      flex-wrap: wrap;
      justify-content: center;
      align-items: center;
-     padding: 60px 0;
+     padding: 60px 20px;
      gap: 20px;
 }
 
@@ -716,8 +782,8 @@ header {
      height: auto;
 }
 
-/* ============ Application Banner ============ */
-.application {
+/* ============ App Banner ============ */
+.app-banner {
      background-color: #a5141a;
      width: 100%;
      display: flex;
@@ -729,7 +795,7 @@ header {
      text-align: center;
 }
 
-.application h3 {
+.app-banner h3 {
      color: white;
      font-family: 'Bebas Neue', cursive;
      font-size: 22px;
@@ -737,11 +803,11 @@ header {
      margin: 0;
 }
 
-.application .btn-primary {
+.app-banner .btn-primary {
      background-color: #ffb91a;
 }
 
-.application .btn-primary:hover {
+.app-banner .btn-primary:hover {
      color: black;
      background-color: white;
 }
@@ -749,12 +815,13 @@ header {
 /* ============ Footer ============ */
 footer {
      width: 100%;
-     padding: 50px 20px;
+     padding: 50px 20px 20px;
      display: flex;
-     justify-content: center;
+     flex-direction: column;
+     align-items: center;
 }
 
-.footer-box {
+.footer-columns {
      width: 100%;
      max-width: 1200px;
      display: flex;
@@ -764,14 +831,14 @@ footer {
      gap: 30px;
 }
 
-.footer-box>div {
+.footer-columns>div {
      flex: 1 1 200px;
 }
 
 .footer-contact h5,
-.footer-daily h5,
+.footer-hours h5,
 .footer-help h5,
-.footer-icon h5 {
+.footer-social h5 {
      color: black;
      font-family: 'Bebas Neue', cursive;
      text-align: left;
@@ -800,7 +867,7 @@ footer {
      margin-top: 10px;
 }
 
-.day-list,
+.hours-list,
 .help-list {
      color: #6b6b6b;
      font-family: 'Epilogue', sans-serif;
@@ -811,7 +878,7 @@ footer {
      padding: 0;
 }
 
-.day-list li,
+.hours-list li,
 .help-list li {
      list-style-type: none;
      padding: 3px 0;
@@ -827,51 +894,121 @@ footer {
      color: #a5141a;
 }
 
-.footer-icon a {
+.footer-social a {
      color: #a5141a;
      font-size: 26px;
      text-decoration: none;
      padding-right: 10px;
 }
 
+.footer-credit {
+     margin-top: 30px;
+     font-family: 'Epilogue', sans-serif;
+     font-size: 13px;
+     color: #9a9a9a;
+     text-align: center;
+}
+
+/* ============ Back to Top Button ============ */
+.back-to-top {
+     position: fixed;
+     right: 40px;
+     bottom: 30px;
+     width: 46px;
+     height: 46px;
+     border-radius: 50%;
+     background-color: #a5141a;
+     color: #fff;
+     border: none;
+     font-size: 30px;
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     opacity: 0;
+     visibility: hidden;
+     transform: translateY(10px);
+     transition: opacity 0.25s, transform 0.25s, background-color 0.2s;
+     z-index: 200;
+}
+
+.back-to-top.is-visible {
+     opacity: 1;
+     visibility: visible;
+     transform: translateY(0);
+}
+
+.back-to-top:hover {
+     background-color: goldenrod;
+}
+
+/* 
+============================================================
+          RESPONSIVE — Tablet and below
+============================================================
+*/
 @media (max-width: 900px) {
-     .headertext h2 {
+     .hero-content h2 {
           font-size: 50px;
      }
 
-     .fullmenu-box h2 {
+     .cta-content h2 {
           font-size: 50px;
      }
 
-     .preferred-foods h3 {
+     .popular-content h3 {
           font-size: 45px;
      }
 
-     .feedback {
+     .testimonials-section {
           background-attachment: scroll;
+     }
+
+     .about-section {
+          padding: 80px;
+     }
+
+     .dish-image,
+     .about-image img {
+          display: none;
+     }
+
+     .app-banner h3 {
+          margin-bottom: 20px;
      }
 }
 
+/* 
+============================================================
+          RESPONSIVE — Mobile
+============================================================
+*/
 @media (max-width: 600px) {
-     .headertext {
+     .site-nav {
+          justify-content: center;
+          text-align: center;
+          top: -0.1%;
+     }
+
+     .hero-content {
           margin-left: 5%;
           align-items: center;
           text-align: center;
      }
 
-     .headertext h1 {
+     .hero-content h1 {
           font-size: 30px;
      }
 
-     .headertext h2 {
+     .hero-content h2 {
           font-size: 38px;
      }
 
-     .los-america {
+     .about-section {
           text-align: center;
      }
 
-     .los-text h2 {
+     .about-text h2 {
           font-size: 34px;
      }
 
@@ -881,22 +1018,31 @@ footer {
           text-align: center;
      }
 
-     .application {
+     .app-banner {
           text-align: center;
           flex-direction: column;
      }
 
-     .fullmenu-box h2 {
+     .cta-content h2 {
           font-size: 38px;
      }
 
-     .preferred-foods h3 {
+     .popular-content h3 {
           font-size: 32px;
      }
 
-     .main-menu h2,
-     .main-menu h3,
-     .main-menu p {
+     .dish-list h2,
+     .dish-list h3,
+     .dish-list p {
           text-align: center;
+     }
+
+     .recommended-card-image {
+          margin-bottom: 30px;
+     }
+
+     .back-to-top {
+          right: 14px;
+          bottom: 14px;
      }
 }
